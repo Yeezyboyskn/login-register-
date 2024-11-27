@@ -1,0 +1,150 @@
+/* Estilos globales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Fondo claro para la página */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos del formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: white; /* Fondo blanco para el formulario */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Campos de texto */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #fff; /* Fondo blanco para campos */
+    color: #333; /* Color de texto oscuro */
+}
+
+/* Cambio de color en el foco */
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #f1c40f; /* Amarillo OXXO */
+    outline: none;
+}
+
+/* Estilo del botón */
+button {
+    background-color: #d91c3e; /* Rojo OXXO */
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+}
+
+/* Efecto hover para el botón */
+button:hover {
+    background-color: #c12c40; /* Rojo más oscuro para el hover */
+}
+
+/* Estilo de los enlaces */
+a {
+    text-decoration: none;
+    color: #f1c40f; /* Amarillo OXXO */
+    font-size: 1rem;
+}
+
+/* Cambio de color del enlace al pasar el ratón */
+a:hover {
+    text-decoration: underline;
+    color: #e67e22; /* Naranja para hover en el enlace */
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 900px;
+    width: 100%;
+    background-color: #fff; /* Fondo blanco para el contenedor */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+/* Estilo para el título principal (h1) */
+h1 {
+    color: #d91c3e; /* Rojo OXXO */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700; /* Negrita para destacar */
+}
+
+/* Títulos secundarios (h2) */
+h2 {
+    color: #f1c40f; /* Amarillo OXXO */
+    font-size: 2rem;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+/* Títulos terciarios (h3) */
+h3 {
+    font-size: 1.5rem;
+    color: #333; /* Gris oscuro */
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+/* Logo de la marca */
+.logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+/* Ajustes responsivos */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    input, button {
+        padding: 10px;
+        font-size: 1rem;
+    }
+}
+/* Estilo para las alertas */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.alert.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.alert.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}

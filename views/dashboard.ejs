@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sistema de Automatización</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Para gráficos -->
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido al Sistema de Automatización de Inventario</h1>
+        <h2>¡Hola, <%= username %>!</h2>
+        <p>Has iniciado sesión correctamente.</p>
+
+        <div class="dashboard">
+            <div class="stats">
+                <div class="card">
+                    <h3>Inventario Total</h3>
+                    <p class="count">500</p>
+                </div>
+                <div class="card">
+                    <h3>Productos Vendidos</h3>
+                    <p class="count">320</p>
+                </div>
+                <div class="card">
+                    <h3>Ventas de Hoy</h3>
+                    <p class="count">$1500</p>
+                </div>
+            </div>
+
+            <!-- Gráfico de barras -->
+            <div class="chart-container">
+                <h3>Gráfico de Ventas</h3>
+                <canvas id="salesChart"></canvas>
+            </div>
+
+            <div class="table-container">
+                <h3>Productos Recientes</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Categoría</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Producto A</td>
+                            <td>Electrónica</td>
+                            <td>$100</td>
+                            <td>20</td>
+                            <td><button class="btn-edit"><i class="material-icons">edit</i> Editar</button></td>
+                        </tr>
+                        <tr>
+                            <td>Producto B</td>
+                            <td>Ropa</td>
+                            <td>$50</td>
+                            <td>50</td>
+                            <td><button class="btn-edit"><i class="material-icons">edit</i> Editar</button></td>
+                        </tr>
+                        <tr>
+                            <td>Producto C</td>
+                            <td>Comida</td>
+                            <td>$30</td>
+                            <td>100</td>
+                            <td><button class="btn-edit"><i class="material-icons">edit</i> Editar</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <a href="/auth/logout" class="logout">Cerrar sesión</a>
+    </div>
+
+    <script>
+        // Crear gráfico de ventas con Chart.js
+        var ctx = document.getElementById('salesChart').getContext('2d');
+        var salesChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+                datasets: [{
+                    label: 'Ventas ($)',
+                    data: [1500, 1700, 1600, 1800, 1900, 2100],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
